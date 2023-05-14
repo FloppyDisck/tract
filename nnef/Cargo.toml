@@ -18,10 +18,10 @@ maintenance = { status = "actively-developed" }
 byteorder.workspace = true
 log.workspace = true
 nom.workspace = true
-tar.workspace = true
 flate2 = { workspace = true, optional = true }
 walkdir.workspace = true
 tract-core = { version = "=0.20.5-pre", path = "../core" }
+tar = "0.4.37"
 
 [dev-dependencies]
 temp-dir = "0.1.11"
