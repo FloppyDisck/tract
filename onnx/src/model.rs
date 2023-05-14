@@ -273,6 +273,12 @@ impl Onnx {
         }
         Ok(())
     }
+
+    fn model_for_slice(&self, r: &[u8]) -> TractResult<InferenceModel> {
+        let b = bytes::Bytes::from(Vec::from(r));
+        let decoded = crate::pb::ModelProto::decode(b)?;
+        self.model_for_proto_model(&decoded)
+    }
 }
 
 impl Framework<pb::ModelProto, InferenceModel> for Onnx {
